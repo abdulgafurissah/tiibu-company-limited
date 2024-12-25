@@ -22,18 +22,18 @@ function Admin() {
         <>
             <div className="sidebar">
                 <h2>Admin Panel</h2>
-                <button className="active">Manage Services</button>
-                <button>Manage Projects</button>
-                <button>Manage Blog Posts</button>
-                <button>View Messages</button>
-                <button>Job Applications</button>
-                <button>Logout</button>
+                <button className="active" data-link="#services">Manage Services</button>
+                <button data-link="#projects">Manage Projects</button>
+                <button data-link="#blog">Manage Blog Posts</button>
+                <button data-link="#messages">View Messages</button>
+                <button data-link="#jobs">Job Applications</button>
+                <button data-link="#logout">Logout</button>
             </div>
 
             <div className="main-content">
                 <section id="services">
                     <h1>Manage Services</h1>
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Service Name</th>
@@ -53,7 +53,7 @@ function Admin() {
                         </tbody>
                     </table>
                     <h2>Add New Service</h2>
-                    <form>
+                    <form className="form">
                         <input type="text" placeholder="Service Name" required/>
                         <textarea rows="5" placeholder="Description" required></textarea>
                         <button type="submit">Add Service</button>
@@ -62,7 +62,7 @@ function Admin() {
 
                 <section id="projects">
                     <h1>Manage Projects</h1>
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Project Name</th>
@@ -84,7 +84,7 @@ function Admin() {
                         </tbody>
                     </table>
                     <h2>Add New Project</h2>
-                    <form>
+                    <form className="form">
                         <input type="text" placeholder="Project Name" required/>
                         <input type="text" placeholder="Type (e.g., Residential)" required/>
                         <input type="text" placeholder="Status (e.g., Ongoing, Completed)" required/>
@@ -94,7 +94,7 @@ function Admin() {
 
                 <section id="blogs">
                     <h1>Manage Blog Posts</h1>
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -114,7 +114,7 @@ function Admin() {
                         </tbody>
                     </table>
                     <h2>Add New Blog Post</h2>
-                    <form>
+                    <form className="form">
                         <input type="text" placeholder="Blog Title" required/>
                         <textarea rows="5" placeholder="Content" required></textarea>
                         <button type="submit">Add Blog Post</button>
@@ -123,7 +123,7 @@ function Admin() {
 
                 <section id="messages">
                     <h1>View Messages</h1>
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -143,7 +143,7 @@ function Admin() {
 
                 <section id="applications">
                     <h1>Job Applications</h1>
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Applicant Name</th>
@@ -166,3 +166,4 @@ function Admin() {
 }
 
 export default Admin;
+

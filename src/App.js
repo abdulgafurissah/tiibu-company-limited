@@ -9,23 +9,20 @@ import Career from './pages/career';
 import Admin from './pages/admin';
 import RootLayout from './rootLayout/rootlayout';
 
-
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-      <Route path="admin" element={<Admin />} />
-      </Routes>
       <RootLayout />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="service" element={<Services />} />
-        <Route path="projets" element={<Projets />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="career" element={<Career />} />
-      </Routes>
+        <Routes>
+          <Route path="admin" element={<Admin />} />
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="service" element={<Services />} />
+          <Route path="projets" element={<Projets />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="career" element={<Career />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
