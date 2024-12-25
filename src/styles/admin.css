@@ -22,14 +22,14 @@
             margin-bottom: 20px;
             font-size: 24px;
         }
-        .sidebar a {
+        .sidebar button {
             color: #fff;
             text-decoration: none;
             padding: 10px;
             border-radius: 5px;
             transition: background 0.3s;
         }
-        .sidebar a:hover, .sidebar a.active {
+        .sidebar button:hover, .sidebar button.active {
             background: #f0a500;
         }
 

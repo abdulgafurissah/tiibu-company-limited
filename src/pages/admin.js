@@ -2,7 +2,7 @@ import '../styles/admin.css';
 function Admin() {
 
     // JavaScript to toggle active section
-    const links = document.querySelectorAll('.sidebar a');
+    const links = document.querySelectorAll('.sidebar button');
     const sections = document.querySelectorAll('.main-content section');
 
     links.forEach(link => {
@@ -22,11 +22,12 @@ function Admin() {
         <>
             <div className="sidebar">
                 <h2>Admin Panel</h2>
-                <a href="#services" className="active">Manage Services</a>
-                <a href="#projects">Manage Projects</a>
-                <a href="#blogs">Manage Blog Posts</a>
-                <a href="#messages">View Messages</a>
-                <a href="#applications">Job Applications</a>
+                <button className="active">Manage Services</button>
+                <button>Manage Projects</button>
+                <button>Manage Blog Posts</button>
+                <button>View Messages</button>
+                <button>Job Applications</button>
+                <button>Logout</button>
             </div>
 
             <div className="main-content">
