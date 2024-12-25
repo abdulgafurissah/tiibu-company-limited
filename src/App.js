@@ -6,6 +6,7 @@ import Services from './pages/service';
 import Projets from './pages/projets';
 import Contact from './pages/contact';
 import Career from './pages/career';
+import Admin from './pages/admin';
 import RootLayout from './rootLayout/rootlayout';
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="projets" element={<Projets />} />
         <Route path="contact" element={<Contact />} />
         <Route path="career" element={<Career />} />
+        <Route path="admin" element={<Admin />} />
       </Routes>
       </BrowserRouter>
     </div>
