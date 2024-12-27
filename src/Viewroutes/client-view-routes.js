@@ -5,7 +5,7 @@ import Services from '../pages/service';
 import Projets from '../pages/projets';
 import Contact from '../pages/contact';
 import Career from '../pages/career';
-import RootLayout from '../rootLayout/rootlayout';
+import RootLayout from '../components/client-view-header';
 
 
 

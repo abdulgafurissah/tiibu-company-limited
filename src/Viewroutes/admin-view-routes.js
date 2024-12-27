@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Admin from '../pages/admin';
+import Admin from '../admin-pages/admin';
 
 function AdminViewRoutes() {
   return (
