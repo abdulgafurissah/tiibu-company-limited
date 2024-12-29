@@ -1,6 +1,26 @@
 import { Link } from 'react-router-dom';
 import '../styles/admin.css';
+import { useEffect } from 'react';
+
 function AdminHeader() {
+    useEffect(() => {
+        // JavaScript to toggle active section
+        const links = document.querySelectorAll('.sidebar a');
+        const sections = document.querySelectorAll('.main-content section');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                sections.forEach(section => section.style.display = 'none');
+                document.querySelector(link.getAttribute('href')).style.display = 'block';
+            });
+        });
+
+        // Default display
+        sections.forEach((section, index) => section.style.display = index === 0 ? 'block' : 'none');
+    }, []);
 
     return (
         <>
@@ -13,7 +33,7 @@ function AdminHeader() {
                 <Link to="/admin/jobs">Job Applications</Link>
                 <Link to="/admin/logout">Logout</Link>
             </div>
-
+            
             <div className="main-content">
                 <section id="services">
                     <h1>Manage Services</h1>
@@ -34,9 +54,8 @@ function AdminHeader() {
                     <h1>Logout</h1>
                 </section>
             </div>
-
         </>
-    )
+    );
 }
 
 export default AdminHeader;
