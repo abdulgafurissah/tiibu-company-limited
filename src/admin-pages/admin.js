@@ -1,7 +1,8 @@
 import '../styles/admin.css';
 import AdminHeader from '../components/admin-view-header';
-function Admin() {
+import { Link } from 'react-router-dom';
 
+function Admin() {
     return (
         <>
             <AdminHeader />
@@ -29,7 +30,7 @@ function Admin() {
                     </table>
                     <h2>Add New Service</h2>
                     <form className="form">
-                        <input type="text" placeholder="Service Name" required/>
+                        <input type="text" placeholder="Service Name" required />
                         <textarea rows="5" placeholder="Description" required></textarea>
                         <button type="submit">Add Service</button>
                     </form>
@@ -60,15 +61,16 @@ function Admin() {
                     </table>
                     <h2>Add New Project</h2>
                     <form className="form">
-                        <input type="text" placeholder="Project Name" required/>
-                        <input type="text" placeholder="Type (e.g., Residential)" required/>
-                        <input type="text" placeholder="Status (e.g., Ongoing, Completed)" required/>
+                        <input type="text" placeholder="Project Name" required />
+                        <input type="text" placeholder="Type (e.g., Residential)" required />
+                        <input type="text" placeholder="Status (e.g., Ongoing, Completed)" required />
                         <button type="submit">Add Project</button>
                     </form>
                 </section>
 
                 <section id="blogs">
                     <h1>Manage Blog Posts</h1>
+                    <Link to="/admin/blogs">Add New Blog Post</Link>
                     <table className="table">
                         <thead>
                             <tr>
@@ -88,12 +90,6 @@ function Admin() {
                             </tr>
                         </tbody>
                     </table>
-                    <h2>Add New Blog Post</h2>
-                    <form className="form">
-                        <input type="text" placeholder="Blog Title" required/>
-                        <textarea rows="5" placeholder="Content" required></textarea>
-                        <button type="submit">Add Blog Post</button>
-                    </form>
                 </section>
 
                 <section id="messages">
@@ -137,8 +133,7 @@ function Admin() {
                 </section>
             </div>
         </>
-    )
+    );
 }
 
 export default Admin;
-
