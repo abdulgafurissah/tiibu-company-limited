@@ -1,69 +1,12 @@
 import React from 'react';
 import '../styles/admin.css';
 import AdminHeader from '../components/admin-view-header';
-import { Link } from 'react-router-dom';
 
 function Admin() {
     return (
         <>
             <AdminHeader />
             <div className="main-content">
-                <section id="projects">
-                    <h1>Manage Projects</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Project Name</th>
-                                <th>Type</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Luxury Villas</td>
-                                <td>Residential</td>
-                                <td>Completed</td>
-                                <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h2>Add New Project</h2>
-                    <form className="form">
-                        <input type="text" placeholder="Project Name" required />
-                        <input type="text" placeholder="Type (e.g., Residential)" required />
-                        <input type="text" placeholder="Status (e.g., Ongoing, Completed)" required />
-                        <button type="submit">Add Project</button>
-                    </form>
-                </section>
-
-                <section id="blogs">
-                    <h1>Manage Blog Posts</h1>
-                    <Link to="/admin/blogs">Add New Blog Post</Link>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Published Date</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>5 Tips for Sustainable Construction</td>
-                                <td>2024-12-01</td>
-                                <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
                 <section id="messages">
                     <h1>View Messages</h1>
                     <table className="table">
