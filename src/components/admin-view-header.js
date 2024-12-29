@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import '../styles/admin.css';
+import { Link , NavLink} from 'react-router-dom';
 import { useEffect } from 'react';
+import '../styles/admin.css';
 
 function AdminHeader() {
     useEffect(() => {
@@ -26,14 +26,14 @@ function AdminHeader() {
         <>
             <div className="sidebar">
                 <h2>Admin Panel</h2>
-                <Link to="/admin/services" className="active">Manage Services</Link>
+                <NavLink to="/admin/services" className="active">Manage Services</NavLink>
                 <Link to="/admin/projects">Manage Projects</Link>
                 <Link to="/admin/blog">Manage Blog Posts</Link>
                 <Link to="/admin/messages">View Messages</Link>
                 <Link to="/admin/jobs">Job Applications</Link>
                 <Link to="/admin/logout">Logout</Link>
             </div>
-            
+
             <div className="main-content">
                 <section id="services">
                     <h1>Manage Services</h1>

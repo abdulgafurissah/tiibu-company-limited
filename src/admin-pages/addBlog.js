@@ -1,5 +1,3 @@
-import '../styles/admin.css';
-
 function AddBlog() {
   return (
     <>

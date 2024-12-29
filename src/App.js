@@ -4,8 +4,8 @@ import ClientViewRoutes from './Viewroutes/client-view-routes';
 function App() {
   return (
     <div className="App">
-      <AdminViewRoutes />
       <ClientViewRoutes />
+      <AdminViewRoutes />
     </div>
   );
 }

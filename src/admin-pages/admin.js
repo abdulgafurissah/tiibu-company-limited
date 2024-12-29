@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/admin.css';
 import AdminHeader from '../components/admin-view-header';
 import { Link } from 'react-router-dom';
@@ -7,35 +8,6 @@ function Admin() {
         <>
             <AdminHeader />
             <div className="main-content">
-                <section id="services">
-                    <h1>Manage Services</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Service Name</th>
-                                <th>Description</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Building Construction</td>
-                                <td>High-quality residential and commercial construction services.</td>
-                                <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h2>Add New Service</h2>
-                    <form className="form">
-                        <input type="text" placeholder="Service Name" required />
-                        <textarea rows="5" placeholder="Description" required></textarea>
-                        <button type="submit">Add Service</button>
-                    </form>
-                </section>
-
                 <section id="projects">
                     <h1>Manage Projects</h1>
                     <table className="table">
@@ -137,3 +109,4 @@ function Admin() {
 }
 
 export default Admin;
+
