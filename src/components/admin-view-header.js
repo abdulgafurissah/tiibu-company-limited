@@ -1,4 +1,4 @@
-import { Link , NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 import '../styles/admin.css';
 
@@ -14,7 +14,8 @@ function AdminHeader() {
                 links.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
                 sections.forEach(section => section.style.display = 'none');
-                document.querySelector(link.getAttribute('href')).style.display = 'block';
+                const sectionId = link.getAttribute('href').split('/').pop(); // Get the last part of the URL path
+                document.getElementById(sectionId).style.display = 'block';
             });
         });
 
@@ -27,11 +28,11 @@ function AdminHeader() {
             <div className="sidebar">
                 <h2>Admin Panel</h2>
                 <NavLink to="/admin/services" className="active">Manage Services</NavLink>
-                <Link to="/admin/projects">Manage Projects</Link>
-                <Link to="/admin/blog">Manage Blog Posts</Link>
-                <Link to="/admin/messages">View Messages</Link>
-                <Link to="/admin/jobs">Job Applications</Link>
-                <Link to="/admin/logout">Logout</Link>
+                <NavLink to="/admin/projects">Manage Projects</NavLink>
+                <NavLink to="/admin/blog">Manage Blog Posts</NavLink>
+                <NavLink to="/admin/messages">View Messages</NavLink>
+                <NavLink to="/admin/jobs">Job Applications</NavLink>
+                <NavLink to="/admin/logout">Logout</NavLink>
             </div>
 
             <div className="main-content">
