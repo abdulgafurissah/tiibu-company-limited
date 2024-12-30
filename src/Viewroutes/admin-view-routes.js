@@ -1,17 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 import AdminHeader from '../components/admin-view-header';
-import Admin from '../admin-pages/admin';
-import AddBlog from '../admin-pages/addBlog';
-import AddProject from '../admin-pages/addProjects';
-import AddServices from '../admin-pages/addServices.js';
-import MessageView from '../admin-pages/messageView';
-import ViewApplications from '../admin-pages/viewApplications'
-
+import Admin from '../adminPages/admin';
+import AddBlog from '../adminPages/addBlog';
+import AddProject from '../adminPages/addProjects';
+import AddServices from '../adminPages/addServices';
+import MessageView from '../adminPages/messageView';
+import ViewApplications from '../adminPages/viewApplications';
 
 function AdminViewRoutes() {
   return (
     <>
-    <AdminHeader />
+      <AdminHeader />
       <Routes>
         <Route path='/admin' element={<Admin />} />
         <Route path='/admin/blog' element={<AddBlog />} />
@@ -19,10 +18,11 @@ function AdminViewRoutes() {
         <Route path='/admin/projects' element={<AddProject />} />
         <Route path='/admin/messages' element={<MessageView />} />
         <Route path='/admin/jobs' element={<ViewApplications />} />
+        <Route path="*" element={<div>Error 404: Page Not Found</div>} />
       </Routes>
     </>
-
   );
 }
 
 export default AdminViewRoutes;
+

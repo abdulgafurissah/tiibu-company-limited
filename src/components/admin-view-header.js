@@ -11,7 +11,6 @@ function AdminHeader() {
                 <NavLink to="/admin/blog">Manage Blog Posts</NavLink>
                 <NavLink to="/admin/messages">View Messages</NavLink>
                 <NavLink to="/admin/jobs">Job Applications</NavLink>
-                <NavLink to="/admin/logout">Logout</NavLink>
             </div>
 
         </>
