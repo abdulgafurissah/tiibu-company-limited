@@ -1,4 +1,4 @@
-function AddProject() {
+function Projects() {
     return (
         <>
             <div className="main-content">
@@ -38,4 +38,4 @@ function AddProject() {
     );
 }
 
-export default AddProject;
+export default Projects;

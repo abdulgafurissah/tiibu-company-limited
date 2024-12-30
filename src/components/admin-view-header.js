@@ -1,20 +1,20 @@
-import { NavLink} from 'react-router-dom';
-import '../styles/admin.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function AdminHeader() {
+const Sidebar = () => (
+  <aside className="bg-gray-800 text-white w-64 p-4">
+    <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
+    <nav>
+      <ul className="space-y-4">
+        <li><Link to="/admin" className="hover:underline">Dashboard</Link></li>
+        <li><Link to="/admin/services" className="hover:underline">Services</Link></li>
+        <li><Link to="/admin/projects" className="hover:underline">Projects</Link></li>
+        <li><Link to="/admin/blog-posts" className="hover:underline">Blog Posts</Link></li>
+        <li><Link to="/admin/job-applications" className="hover:underline">Job Applications</Link></li>
+        <li><Link to="/admin/messages" className="hover:underline">Messages</Link></li>
+      </ul>
+    </nav>
+  </aside>
+);
 
-    return (
-        <>
-            <div className="sidebar">
-                <NavLink to="/admin/services" activeClassName="active">Manage Services</NavLink>
-                <NavLink to="/admin/projects">Manage Projects</NavLink>
-                <NavLink to="/admin/blog">Manage Blog Posts</NavLink>
-                <NavLink to="/admin/messages">View Messages</NavLink>
-                <NavLink to="/admin/jobs">Job Applications</NavLink>
-            </div>
-
-        </>
-    );
-}
-
-export default AdminHeader;
+export default Sidebar;

@@ -1,28 +1,28 @@
 import { Routes, Route } from 'react-router-dom';
-import AdminHeader from '../components/admin-view-header';
-import Admin from '../adminPages/admin';
-import AddBlog from '../adminPages/addBlog';
-import AddProject from '../adminPages/addProjects';
-import AddServices from '../adminPages/addServices';
-import MessageView from '../adminPages/messageView';
-import ViewApplications from '../adminPages/viewApplications';
+import Sidebar from '../components/admin-view-header';
+import Dashboard from '../adminPages/admin';
+import Services from '../adminPages/addServices';
+import Projects from '../adminPages/addProjects';
+import BlogPosts from '../adminPages/addBlog';
+import JobApplications from '../adminPages/viewApplications';
+import Messages from '../adminPages/messageView';
 
 function AdminViewRoutes() {
   return (
-    <>
-      <AdminHeader />
-      <Routes>
-        <Route path='/admin' element={<Admin />} />
-        <Route path='/admin/blog' element={<AddBlog />} />
-        <Route path='/admin/services' element={<AddServices />} />
-        <Route path='/admin/projects' element={<AddProject />} />
-        <Route path='/admin/messages' element={<MessageView />} />
-        <Route path='/admin/jobs' element={<ViewApplications />} />
-        <Route path="*" element={<div>Error 404: Page Not Found</div>} />
-      </Routes>
-    </>
+    <div className="flex">
+      <Sidebar />
+      <div className="flex-grow p-4">
+        <Routes>
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="/admin/services" element={<Services />} />
+          <Route path="/admin/projects" element={<Projects />} />
+          <Route path="/admin/blog-posts" element={<BlogPosts />} />
+          <Route path="/admin/job-applications" element={<JobApplications />} />
+          <Route path="/admin/messages" element={<Messages />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
 export default AdminViewRoutes;
-

@@ -1,9 +1,8 @@
-import React from 'react';
-
-const ViewApplications = () => {
+const JobApplications = () => {
   return (
     <>
-      <section id="applications">
+    <div className='main-content'>
+    <section id="applications">
         <h1>Job Applications</h1>
         <table className="table">
           <thead>
@@ -26,9 +25,11 @@ const ViewApplications = () => {
           </tbody>
         </table>
       </section>
+    </div>
+      
     </>
   );
 };
 
-export default ViewApplications;
+export default JobApplications;
 

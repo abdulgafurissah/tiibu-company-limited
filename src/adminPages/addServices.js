@@ -1,73 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function AddServices() {
-    const [services, setServices] = useState([
-        { name: "Building Construction", description: "High-quality residential and commercial construction services." }
-    ]);
+const Services = () => {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const [newService, setNewService] = useState({ name: '', description: '' });
+  useEffect(() => {
+    fetch('/api/services')
+      .then(response => response.json())
+      .then(data => {
+        setServices(data);
+        setLoading(false);
+      })
+      .catch(error => console.error(error));
+  }, []);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setNewService({ ...newService, [name]: value });
-    };
+  const handleDelete = (id) => {
+    fetch(`/api/services/${id}`, { method: 'DELETE' })
+      .then(() => setServices(services.filter(service => service.id !== id)))
+      .catch(error => console.error(error));
+  };
 
-    const handleAddService = (e) => {
-        e.preventDefault();
-        setServices([...services, newService]);
-        setNewService({ name: '', description: '' });
-    };
+  if (loading) return <p>Loading...</p>;
 
-    return (
-        <>
-            <div className="main-content">
-                <section id="services">
-                    <h1>Manage Services</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Service Name</th>
-                                <th>Description</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {services.map((service, index) => (
-                                <tr key={index}>
-                                    <td>{service.name}</td>
-                                    <td>{service.description}</td>
-                                    <td>
-                                        <button>Edit</button>
-                                        <button>Delete</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <h2>Add New Service</h2>
-                    <form className="form" onSubmit={handleAddService}>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            placeholder="Service Name" 
-                            value={newService.name} 
-                            onChange={handleInputChange} 
-                            required 
-                        />
-                        <textarea 
-                            name="description" 
-                            rows="5" 
-                            placeholder="Description" 
-                            value={newService.description} 
-                            onChange={handleInputChange} 
-                            required
-                        ></textarea>
-                        <button type="submit">Add Service</button>
-                    </form>
-                </section>
-            </div>
-        </>
-    );
-}
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-6">Services</h1>
+      <table className="min-w-full border-collapse border border-gray-300">
+        <thead>
+          <tr>
+            <th className="border border-gray-300 p-2">Name</th>
+            <th className="border border-gray-300 p-2">Description</th>
+            <th className="border border-gray-300 p-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {services.map(service => (
+            <tr key={service.id}>
+              <td className="border border-gray-300 p-2">{service.name}</td>
+              <td className="border border-gray-300 p-2">{service.description}</td>
+              <td className="border border-gray-300 p-2">
+                <button
+                  className="text-red-500 hover:underline"
+                  onClick={() => handleDelete(service.id)}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
-export default AddServices;
+export default Services;
+

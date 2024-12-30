@@ -1,8 +1,8 @@
-
-function AddBlog() {
+function BlogPosts() {
   return (
     <>
-      <div className="blog-management">
+     <div className="main-content">
+     <div className="blog-management">
         <section id="blogs">
           <h1>Manage Blog Posts</h1>
           <table className="table">
@@ -32,9 +32,11 @@ function AddBlog() {
           </form>
         </section>
       </div>
+            </div>
+      
     </>
   );
 }
 
-export default AddBlog;
+export default BlogPosts;
 

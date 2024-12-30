@@ -1,6 +1,4 @@
-import React from 'react'
-
-function MessageView() {
+function  Messages() {
   return (
     <div className="main-content">
                 <section id="messages">
@@ -26,4 +24,4 @@ function MessageView() {
   )
 }
 
-export default MessageView
+export default  Messages;

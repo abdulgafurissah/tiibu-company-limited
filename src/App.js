@@ -1,8 +1,7 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
 import AdminViewRoutes from './Viewroutes/admin-view-routes';
 import ClientViewRoutes from './Viewroutes/client-view-routes';
+import './App.css';
 
 function App() {
   return (
