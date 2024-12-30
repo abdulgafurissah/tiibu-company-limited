@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/rootlayout.css'
 
+
+
 // Ensure DOM elements are loaded before attaching event listeners
 window.onload = () => {
     const menuIcon = document.getElementById('menuIcon');
@@ -39,7 +41,7 @@ function RootLayout() {
                         <li><NavLink to="/"> Home</NavLink></li>
                         <li><NavLink to="about"> About</NavLink></li>
                         <li><NavLink to="service"> Services</NavLink></li>
-                        <li></li>
+                        <li><NavLink to="projets"> Projets</NavLink></li>
                         <li><NavLink to="contact"> Contact</NavLink></li>
                     </ul>
                 </nav>
