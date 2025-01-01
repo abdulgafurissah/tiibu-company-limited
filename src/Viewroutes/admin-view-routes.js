@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import Sidebar from '../components/admin-view-header';
 import Dashboard from '../adminPages/admin';
 import Services from '../adminPages/addServices';
@@ -13,12 +13,14 @@ function AdminViewRoutes() {
       <Sidebar />
       <div className="flex-grow p-4">
         <Routes>
-          <Route path="/admin" element={<Dashboard />} />
-          <Route path="/admin/services" element={<Services />} />
-          <Route path="/admin/projects" element={<Projects />} />
-          <Route path="/admin/blog-posts" element={<BlogPosts />} />
-          <Route path="/admin/job-applications" element={<JobApplications />} />
-          <Route path="/admin/messages" element={<Messages />} />
+          <Route path="/" element={<Dashboard />}>
+            <Route path="services" element={<Services />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="blog-posts" element={<BlogPosts />} />
+            <Route path="job-applications" element={<JobApplications />} />
+            <Route path="messages" element={<Messages />} />
+            <Route index element={<Outlet />} />
+          </Route>
         </Routes>
       </div>
     </div>
@@ -26,3 +28,4 @@ function AdminViewRoutes() {
 }
 
 export default AdminViewRoutes;
+

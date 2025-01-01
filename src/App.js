@@ -7,8 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/admin/*' element={<AdminViewRoutes />} />
         <Route path='/*' element={<ClientViewRoutes />} />
+        <Route path='/admin/*' element={<AdminViewRoutes />} />
       </Routes>
     </BrowserRouter>
   );

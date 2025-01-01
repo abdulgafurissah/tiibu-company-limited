@@ -1,20 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import '../styles/rootlayout.css';
 
-const Sidebar = () => (
-  <aside className="bg-gray-800 text-white w-64 p-4">
-    <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
-    <nav>
-      <ul className="space-y-4">
-        <li><Link to="/admin" className="hover:underline">Dashboard</Link></li>
-        <li><Link to="/admin/services" className="hover:underline">Services</Link></li>
-        <li><Link to="/admin/projects" className="hover:underline">Projects</Link></li>
-        <li><Link to="/admin/blog-posts" className="hover:underline">Blog Posts</Link></li>
-        <li><Link to="/admin/job-applications" className="hover:underline">Job Applications</Link></li>
-        <li><Link to="/admin/messages" className="hover:underline">Messages</Link></li>
-      </ul>
-    </nav>
-  </aside>
-);
+function Sidebar() {
+    const [isActive, setIsActive] = useState(false);
+    const location = useLocation();
+
+    const toggleMenu = () => {
+        setIsActive(!isActive);
+    };
+
+    return (
+        <>
+            <header className="header">
+                <div className="logo">Tiibu Co. Ltd</div>
+                <div className="menu-icon" onClick={toggleMenu}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+                <nav className={`nav-menu ${isActive ? 'active' : ''}`}>
+                    <ul>
+                        <li><NavLink to="/admin" className="hover:underline" state={{ from: location }}>Dashboard</NavLink></li>
+                        <li><NavLink to="/admin/services" className="hover:underline" state={{ from: location }}>Services</NavLink></li>
+                        <li><NavLink to="/admin/projects" className="hover:underline" state={{ from: location }}>Projects</NavLink></li>
+                        <li><NavLink to="/admin/blog-posts" className="hover:underline" state={{ from: location }}>Blog Posts</NavLink></li>
+                        <li><NavLink to="/admin/job-applications" className="hover:underline" state={{ from: location }}>Job Applications</NavLink></li>
+                        <li><NavLink to="/admin/messages" className="hover:underline" state={{ from: location }}>Messages</NavLink></li>
+                    </ul>
+                </nav>
+            </header>
+        </>
+    );
+}
 
 export default Sidebar;
