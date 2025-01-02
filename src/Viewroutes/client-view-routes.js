@@ -15,12 +15,14 @@ function ClientViewRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="service" element={<Services />} />
-        <Route path="projets" element={<Projets />} />
+        <Route path="projet" element={<Projets />} />
         <Route path="contact" element={<Contact />} />
         <Route path="career" element={<Career />} />
       </Routes>
     </>
-  )
+  );
 }
 
 export default ClientViewRoutes;
+
+
