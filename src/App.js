@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ClientViewRoutes from './Viewroutes/client-view-routes';
+import ClientViewRoutes from '../src/routes/client-view-routes';
 import './App.css';
 
 function App() {

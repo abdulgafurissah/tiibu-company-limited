@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import '../styles/contact.css';
+import '../../assests/styles/contact.css';
 import { useEffect } from 'react';
 
 function Contact() {

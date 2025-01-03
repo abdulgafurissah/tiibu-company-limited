@@ -1,4 +1,4 @@
-import '../styles/career.css';
+import '../../assests/styles/career.css';
 function Career() {
     // Optional JavaScript for form submission feedback
     const applicationForm = document.querySelector('.application-form form');

@@ -1,4 +1,4 @@
-import '../styles/projects.css';
+import '../../assests/styles/projects.css';
 
 function Projets() {
   // Filter functionality

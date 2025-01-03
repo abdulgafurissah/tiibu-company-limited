@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import '../styles/home.css'
+import '../../assests/styles/home.css';
 
 // Ensure DOM elements are loaded before attaching event listeners
 window.onload = () => {
@@ -35,7 +35,7 @@ function Home() {
             </section>
             <section className="quick-nav">
                 <NavLink to="career">Careers</NavLink>
-                <NavLink to="projets"> Projects Portfolio</NavLink>
+                <NavLink to="projet"> Projects Portfolio</NavLink>
                 <NavLink to="contact"> Get in Touch</NavLink>
             </section>
         </>

@@ -1,4 +1,4 @@
-import "../styles/about.css";
+import "../../assests/styles/about.css";
 
 function About() {
     return (
