@@ -37,6 +37,7 @@ function DashBoard() {
                     </ul>
                 </nav>
             </header>
+            <h1>Admin Dashboard</h1>
         </>
     );
 }
