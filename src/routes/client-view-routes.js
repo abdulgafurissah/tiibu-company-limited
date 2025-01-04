@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/user/home';
 import About from '../pages/user/about';
 import Services from '../pages/user/service';
@@ -18,6 +18,7 @@ function ClientViewRoutes() {
         <Route path="projet" element={<Projets />} />
         <Route path="contact" element={<Contact />} />
         <Route path="career" element={<Career />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
