@@ -34,9 +34,9 @@ function Home() {
                 </div>
             </section>
             <section className="quick-nav">
-                <NavLink to="career">Careers</NavLink>
-                <NavLink to="projet"> Projects Portfolio</NavLink>
-                <NavLink to="contact"> Get in Touch</NavLink>
+                <NavLink to="/career">Careers</NavLink>
+                <NavLink to="/projet"> Projects Portfolio</NavLink>
+                <NavLink to="/contact"> Get in Touch</NavLink>
             </section>
         </>
     );
