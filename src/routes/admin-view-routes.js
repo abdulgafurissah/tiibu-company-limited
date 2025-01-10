@@ -13,12 +13,12 @@ function AdminViewRoutes() {
       <div className="flex-grow p-4">
         <AdminViewHeader />
         <Routes>
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/dashboard/services' element={<Services />} />
-          <Route path='/dashboard/projects' element={<Projects />} />
-          <Route path='/dashboard/blog-posts' element={<BlogPosts />} />
-          <Route path='/dashboard/job-applications' element={<JobApplications />} />
-          <Route path='/dashboard/messages' element={<Messages />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="services" element={<Services />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="blog-posts" element={<BlogPosts />} />
+          <Route path="job-applications" element={<JobApplications />} />
+          <Route path="messages" element={<Messages />} />
         </Routes>
       </div>
     </div>
