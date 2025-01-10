@@ -1,43 +1,101 @@
-/* rootlayout.css */
+/* File: src/assets/styles/rootlayout.css */
 
-/* General styles */
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .nav {
-    display: none; /* Hide nav by default */
-    background-color: #fff;
-    transition: width 0.3s ease;
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding: 10px 20px;
+}
+
+.nav .nav-div {
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav-ul .nav-li {
+    display: inline-block;
+    list-style: none;
+}
+
+.nav-a,
+.menu-icon,
+.brand {
+    text-decoration: none;
+    color: #002D62;
+    font-size: 20px;
+    padding: 10px;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .header {
-    display: block; /* Show header by default */
+    background-color: #002D62;
+    width: 0%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    height: 100%;
+    transition: 0.5s;
+    padding-top: 20px;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    .nav.open {
-        display: block; /* Show nav when open */
-        width: 70vw; /* Set width of nav */
-    }
+.header .close {
+    padding: 10px;
+    font-size: 36px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ff0000;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
-    .nav-div {
-        padding: 10px; /* Add padding for nav items */
+.header ul {
+    padding: 20px;
+    list-style: none;
+}
+
+.header ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.header ul li a:hover {
+    color: #18181a;
+}
+
+@media (max-width: 650px) {
+    svg {
+        width: 30px;
     }
 
     .nav-ul {
-        list-style-type: none; /* Remove bullet points */
-        padding: 0; /* Remove padding */
+        display: none;
     }
 
-    .nav-li {
-        margin: 10px 0; /* Add margin between items */
-    }
-
-    .close {
-        color: white; /* Close button color */
-        font-size: 2em; /* Increase size */
-        position: absolute; /* Position close button */
-        top: 10px;
-        right: 20px;
-        cursor: pointer; /* Pointer cursor */
+    .header {
+        display: block;
     }
 }
-
