@@ -1,58 +1,44 @@
-import React, { useState, useEffect } from 'react';
+// Import necessary libraries
+import React, { useState } from 'react';
+import '../../assests/styles/adminServices.css';
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [newService, setNewService] = useState('');
 
-  useEffect(() => {
-    fetch('/api/services')
-      .then(response => response.json())
-      .then(data => {
-        setServices(data);
-        setLoading(false);
-      })
-      .catch(error => console.error(error));
-  }, []);
-
-  const handleDelete = (id) => {
-    fetch(`/api/services/${id}`, { method: 'DELETE' })
-      .then(() => setServices(services.filter(service => service.id !== id)))
-      .catch(error => console.error(error));
+  const addService = () => {
+    if (newService.trim() === '') return;
+    setServices([...services, newService]);
+    setNewService('');
   };
 
-  if (loading) return <p>Loading...</p>;
+  const deleteService = (index) => {
+    const updatedServices = services.filter((_, i) => i !== index);
+    setServices(updatedServices);
+  };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-6">Services</h1>
-      <table className="min-w-full border-collapse border border-gray-300">
-        <thead>
-          <tr>
-            <th className="border border-gray-300 p-2">Name</th>
-            <th className="border border-gray-300 p-2">Description</th>
-            <th className="border border-gray-300 p-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {services.map(service => (
-            <tr key={service.id}>
-              <td className="border border-gray-300 p-2">{service.name}</td>
-              <td className="border border-gray-300 p-2">{service.description}</td>
-              <td className="border border-gray-300 p-2">
-                <button
-                  className="text-red-500 hover:underline"
-                  onClick={() => handleDelete(service.id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="services-container">
+      <h1>Manage Services</h1>
+      <div className="add-service">
+        <input
+          type="text"
+          placeholder="Enter new service"
+          value={newService}
+          onChange={(e) => setNewService(e.target.value)}
+        />
+        <button onClick={addService}>Add Service</button>
+      </div>
+      <ul className="services-list">
+        {services.map((service, index) => (
+          <li key={index}>
+            <span>{service}</span>
+            <button onClick={() => deleteService(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 export default Services;
-
