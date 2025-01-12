@@ -22,14 +22,12 @@ function AdminViewHeader() {
                 </div>
                 <nav className={`nav-menu ${isActive ? 'active' : ''}`}>
                     <ul>
-                                <ul>
-                                    <li><Link to="/dashboard">Dashboard</Link></li>
-                                    <li><Link to="/dashboard/services">Services</Link></li>
-                                    <li><Link to="/dashboard/projects">Projects</Link></li>
-                                    <li><Link to="/dashboard/blog-posts">Blog Posts</Link></li>
-                                    <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
-                                    <li><Link to="/dashboard/messages">Messages</Link></li>
-                                </ul>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
+                        <li><Link to="/dashboard/services">Services</Link></li>
+                        <li><Link to="/dashboard/projects">Projects</Link></li>
+                        <li><Link to="/dashboard/blog-posts">Blog Posts</Link></li>
+                        <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
+                        <li><Link to="/dashboard/messages">Messages</Link></li>
                     </ul>
                 </nav>
             </header>
