@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Add Project Form Styling
+   ========================================================================== */
+
+/* Container for the "Add Project" form */
+.add-project-form-container {
+    max-width: 750px; /* Slightly wider for better field layout if needed */
+    margin: 40px auto; /* Centers the form horizontally with top/bottom margin */
+    padding: 30px 40px; /* Ample padding inside the form container */
+    background-color: #ffffff; /* Clean white background for the form card */
+    border-radius: 12px; /* Softer, more modern rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* A subtle but noticeable shadow for depth */
+    border: 1px solid #e0e0e0; /* Light border for definition */
+  }
+  
+  /* Heading for the form */
+  .add-project-form-container h2 {
+    text-align: center;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 30px; /* Space below the heading */
+    font-size: 2em; /* Larger, more prominent heading */
+    font-weight: 600; /* Slightly bolder */
+    color: #33475b; /* A deep, professional blue */
+    letter-spacing: -0.5px; /* Subtle letter spacing adjustment */
+  }
+  
+  /* Styling for each form group (label + input pair) */
+  .add-project-form-container form div {
+    margin-bottom: 22px; /* Consistent spacing between form fields */
+  }
+  
+  /* Styling for form labels */
+  .add-project-form-container form label {
+    display: block; /* Ensures label is on its own line */
+    margin-bottom: 10px; /* Space between label and input field */
+    font-weight: 500; /* Medium weight for clarity */
+    color: #4a5568; /* A softer, dark grey for labels */
+    font-size: 0.95em;
+  }
+  
+  /* Common styling for text inputs, textarea, and select dropdowns */
+  .add-project-form-container form input[type="text"],
+  .add-project-form-container form textarea,
+  .add-project-form-container form select {
+    width: 100%; /* Full width of the container */
+    padding: 14px 16px; /* Generous padding for comfortable interaction */
+    border: 1px solid #cbd5e0; /* Light grey border */
+    border-radius: 8px; /* Consistent rounded corners */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    font-size: 1em;
+    color: #2d3748; /* Dark text color for input */
+    background-color: #f7fafc; /* Very light grey background for inputs */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  /* Focus styles for input fields */
+  .add-project-form-container form input[type="text"]:focus,
+  .add-project-form-container form textarea:focus,
+  .add-project-form-container form select:focus {
+    border-color: #007bff; /* Primary blue border on focus */
+    background-color: #ffffff; /* White background on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); /* Subtle glow effect */
+    outline: none; /* Remove default browser outline */
+  }
+  
+  /* Specific styling for textarea */
+  .add-project-form-container form textarea {
+    min-height: 140px; /* Taller textarea for more content */
+    resize: vertical; /* Allow vertical resizing, disable horizontal */
+    line-height: 1.6;
+  }
+  
+  /* Styling for file input */
+  .add-project-form-container form input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px; /* Specific padding for file input */
+    font-size: 0.9em;
+    color: #4a5568;
+    border: 1px dashed #cbd5e0; /* Dashed border for file input area */
+    border-radius: 8px;
+    background-color: #f7fafc;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  
+  .add-project-form-container form input[type="file"]::-webkit-file-upload-button {
+    /* Style the button part of the file input if needed (browser specific) */
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-project-form-container form input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-project-form-container form input[type="file"]:hover {
+    border-color: #007bff;
+    background-color: #eff6ff; /* Lighter blue on hover over the whole input */
+  }
+  
+  
+  /* Styling for the submit button */
+  .add-project-form-container form button[type="submit"] {
+    display: block;
+    width: 100%; /* Full width button */
+    padding: 14px 20px; /* Comfortable padding */
+    background-image: linear-gradient(to right, #007bff 0%, #0056b3 100%); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Consistent rounded corners */
+    font-size: 1.1em;
+    font-weight: 600; /* Bolder text for button */
+    cursor: pointer;
+    transition: transform 0.1s ease-out, box-shadow 0.2s ease-out;
+    margin-top: 15px; /* Space above the button */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  }
+  
+  .add-project-form-container form button[type="submit"]:hover {
+    background-image: linear-gradient(to right, #0069d9 0%, #004ca0 100%); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+  }
+  
+  .add-project-form-container form button[type="submit"]:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  }
+  
+  
+  /* Styling for error messages within the form */
+  .add-project-form-container .form-error-message {
+    background-color: #fff0f0; /* Softer red background */
+    border: 1px solid #ffcccc; /* Lighter red border */
+    color: #c53030; /* Dark red text for high contrast */
+    padding: 15px; /* More padding for error messages */
+    border-radius: 8px; /* Consistent rounded corners */
+    text-align: left; /* Align text to the left for readability */
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  
+  .add-project-form-container .form-error-message::before {
+    content: "⚠️ "; /* Warning emoji for visual cue */
+    margin-right: 5px;
+  }
+  
+  /* Optional: Add some subtle transitions to the form container itself on load/display */
+  .add-project-form-container {
+    animation: fadeInForm 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInForm {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
