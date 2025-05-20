@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import ProjectCard from '../../components/ProjectCard';
+import ProjectCard from './ProjectCard';
 import { fetchProjects } from '../../utils/api';
 import '../../assests/styles/problog.css'
+
 
 function ProjectList() {
   const [projects, setProjects] = useState([]);
@@ -31,7 +31,6 @@ function ProjectList() {
 
   return (
     <div>
-      <Link to="/add">Add New Project</Link>
       <div>
         {projects.map(project => (
           <ProjectCard key={project._id} project={project} />
