@@ -21,7 +21,8 @@ function Contact() {
       </section>
       <section className="contact-section">
         <h2>Get in Touch</h2>
-        <p>Feel free to reach out to us using the form below, or contact us directly via email or phone. We look forward to hearing from you!</p>
+        <p>Feel free to reach out to us using the form below, or contact us directly via email or phone. 
+          We look forward to hearing from you!</p>
         <form className="contact-form">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />

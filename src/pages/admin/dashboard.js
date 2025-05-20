@@ -1,11 +1,12 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import '../../assests/styles/admin.css';
 import Services from './addServices';
 import Projects from './addProjects';
 import BlogPosts from './addBlog';
+import ProjectCard from './projects';
 import JobApplications from './viewApplications';
 import Messages from './messageView';
+import '../../assests/styles/admin.css';
 
 const Sidebar = () => {
   return (
@@ -16,6 +17,7 @@ const Sidebar = () => {
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/dashboard/services">Services</Link></li>
           <li><Link to="/dashboard/projects">Projects</Link></li>
+          <li><Link to="/dashboard/projectcard">ProjectCard</Link></li>
           <li><Link to="/dashboard/blog-posts">Blog Posts</Link></li>
           <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
           <li><Link to="/dashboard/messages">Messages</Link></li>
@@ -55,6 +57,7 @@ const Dashboard = () => {
         <Routes>
           <Route index element={<DashboardContent />} />
           <Route path="services" element={<Services />} />
+          <Route path="projectcard" element={<ProjectCard />} />
           <Route path="projects" element={<Projects />} />
           <Route path="blog-posts" element={<BlogPosts />} />
           <Route path="job-applications" element={<JobApplications />} />
