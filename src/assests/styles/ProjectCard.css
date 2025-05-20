@@ -49,7 +49,7 @@
   border: 1px solid #eee;
 }
 
-.project-card-item .edit-link {
+.project-card-item .edit-link .delete-link {
   display: inline-block;
   background-color: #3498db; /* Primary blue */
   color: white;
@@ -76,7 +76,7 @@
   .project-card-item h3 {
     font-size: 1.4em;
   }
-  .project-card-item .edit-link {
+  .project-card-item .edit-link  .delete-link {
     padding: 10px 20px;
   }
 }

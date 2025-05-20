@@ -16,7 +16,7 @@ const Sidebar = () => {
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/dashboard/services">Services</Link></li>
-          <li><Link to="/dashboard/projects">Projects</Link></li>
+          <li><Link to="/dashboard/addprojects">Projects</Link></li>
           <li><Link to="/dashboard/projectcard">ProjectCard</Link></li>
           <li><Link to="/dashboard/blog-posts">Blog Posts</Link></li>
           <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
@@ -58,7 +58,7 @@ const Dashboard = () => {
           <Route index element={<DashboardContent />} />
           <Route path="services" element={<Services />} />
           <Route path="projectcard" element={<ProjectCard />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="addprojects" element={<Projects />} />
           <Route path="blog-posts" element={<BlogPosts />} />
           <Route path="job-applications" element={<JobApplications />} />
           <Route path="messages" element={<Messages />} />
