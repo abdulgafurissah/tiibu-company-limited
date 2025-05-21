@@ -1,4 +1,10 @@
 /* Existing styles for home.css might be here */
+.card-1{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  
+}
 
 /* Styles for the new home-dynamic-sections layout */
 .home-dynamic-sections {

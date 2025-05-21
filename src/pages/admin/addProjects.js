@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProject } from '../../utils/api';
+import '../../assests/styles/addproject.css'
 
 const Projects = () => {
   const [formData, setFormData] = useState({

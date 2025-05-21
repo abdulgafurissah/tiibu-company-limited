@@ -3,6 +3,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../assests/styles/rootlayout.css';
+import Logo from '../assests/images/logo.png'
 
 function RootLayout() {
     // Opens the sidebar on small screens
@@ -51,10 +52,10 @@ function RootLayout() {
                     </button>
                 </div>
                 <div className="nav-div">
-                    <NavLink className="brand" to="/">
-                        <i>Tiibu Co. Ltd,</i>
-                    </NavLink>
-                    <img src="../../assests/images/logo.png" alt="Logo" />
+                    <img src={Logo} className="img-logo" alt="Logo" style={{width: '50px', height: '50px'}} />
+                    <div className="brand">
+                        Tiibu Co. Ltd
+                    </div>
                 </div>
             </nav>
             <header className="header">

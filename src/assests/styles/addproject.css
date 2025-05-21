@@ -3,6 +3,16 @@
    ========================================================================== */
 
 /* Container for the "Add Project" form */
+.projects-management{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
 .add-project-form-container {
     max-width: 750px; /* Slightly wider for better field layout if needed */
     margin: 40px auto; /* Centers the form horizontally with top/bottom margin */

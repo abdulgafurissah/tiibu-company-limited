@@ -14,8 +14,8 @@ function ProjectCard({ project }) {
           alt={project.title}
         />
       )}
-      <Link to={`/edit/${project._id}`} className="edit-link">Edit</Link>
-      <Link to={`/delete/${project._id}`} className="delete-link">delete</Link>
+      <Link to={`/dashboard/edit/${project._id}`} className="edit-link">Edit</Link>
+      <Link to={`/dashboard/delete/${project._id}`} className="delete-link">delete</Link>
     </div>
   );
 }

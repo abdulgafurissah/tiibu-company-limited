@@ -5,6 +5,8 @@ import Projects from '../pages/admin/addProjects';
 import BlogPosts from '../pages/admin/addBlog';
 import JobApplications from '../pages/admin/viewApplications';
 import Messages from '../pages/admin/messageView';
+import ProjectCard from '../pages/admin/projects';
+import EditProject from '../pages/admin/EditProject';
 
 function AdminViewRoutes() {
   return (
@@ -19,7 +21,9 @@ function AdminViewRoutes() {
       <Routes>
           <Route path="*" element={<Dashboard />} />
           <Route path="services" element={<Services />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="projects" element={<ProjectCard />} />
+          <Route path="addprojects" element={<Projects />} />
+          <Route path="edit/:id" element={<EditProject />} /> 
           <Route path="blog-posts" element={<BlogPosts />} />
           <Route path="job-applications" element={<JobApplications />} />
           <Route path="messages" element={<Messages />} />

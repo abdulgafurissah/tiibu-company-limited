@@ -30,8 +30,8 @@ function ProjectList() {
   }
 
   return (
-    <div>
-      <Link to="/add">Add New Project</Link>
+    <div className='card-1'>
+      <Link to="/dashboard/addprojects">Add New Project</Link>
       <div>
         {projects.map(project => (
           <ProjectCard key={project._id} project={project} />

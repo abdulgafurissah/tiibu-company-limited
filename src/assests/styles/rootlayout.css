@@ -99,3 +99,11 @@ svg {
         display: block;
     }
 }
+
+.header.closed {
+    width: 0%;
+}
+
+.header.open {
+    width: 25%; /* Adjust width as needed */
+}
