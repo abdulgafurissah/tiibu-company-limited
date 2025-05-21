@@ -7,6 +7,7 @@ import JobApplications from '../pages/admin/viewApplications';
 import Messages from '../pages/admin/messageView';
 import ProjectCard from '../pages/admin/projects';
 import EditProject from '../pages/admin/EditProject';
+import DashboardContent from '../pages/admin/dashboardContent' 
 
 function AdminViewRoutes() {
   return (
@@ -15,11 +16,12 @@ function AdminViewRoutes() {
         <div className="flex-grow p-4">
           {/* Ensure AdminViewHeader component is properly imported and displays correctly */}
           <Dashboard />
+          <DashboardContent />
         </div>
       </div>
 
       <Routes>
-          <Route path="*" element={<Dashboard />} />
+          <Route path="*" element={<Dashboard />}  />
           <Route path="services" element={<Services />} />
           <Route path="projects" element={<ProjectCard />} />
           <Route path="addprojects" element={<Projects />} />
