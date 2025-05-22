@@ -3,9 +3,9 @@
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  padding: 25px;
-  max-width: 360px;
-  width: calc(100% - 30px); /* Consider margins for full width on smallest screens */
+  padding: 100px;
+  max-width: 400px;
+  width: calc(100% - 70px); /* Consider margins for full width on smallest screens */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,9 +13,34 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   font-family: 'Arial', sans-serif;
   margin: auto;
-  width: 50%;
   padding: 10px;
-  
+  margin-bottom: 30px;
+}
+
+.add-project-link {
+  display: inline-block;
+  background-color: #2ecc71; /* Green */
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-link {
+  display: inline-block;
+  background-color: #3498db; /* Primary blue */
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -54,7 +79,7 @@
   border: 1px solid #eee;
 }
 
-.project-card-item .edit-link .delete-link {
+.project-card-item .edit-link, .project-card-item .delete-link {
   display: inline-block;
   background-color: #3498db; /* Primary blue */
   color: white;
@@ -62,11 +87,22 @@
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project-card-item .edit-link:hover {
   background-color: #2980b9; /* Darker blue */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-item .delete-link {
+  background-color: #e74c3c; /* Red for delete */
+}
+.project-card-item .delete-link:hover {
+  background-color: #c0392b; /* Darker red */
   transform: translateY(-2px);
 }
 
@@ -81,7 +117,7 @@
   .project-card-item h3 {
     font-size: 1.4em;
   }
-  .project-card-item .edit-link  .delete-link {
+  .project-card-item .edit-link, .project-card-item .delete-link {
     padding: 10px 20px;
   }
 }

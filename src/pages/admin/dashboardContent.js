@@ -1,7 +1,8 @@
+import '../../assests/styles/dashboardContent.css'
 const DashboardContent = () => {
   return (
     <div className="dashboard-home">
-      <h1>Welcome to the Dashboard</h1>
+      <h1>Tiibu Company Limited</h1>
       <div className="stats-container">
         <div className="stat-card">
           <h3>Total Projects</h3>
