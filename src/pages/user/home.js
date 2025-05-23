@@ -82,10 +82,13 @@ function ProjectList() {
 
     return (
         <div className="project-list">
+            
             {projects.slice(0, 3).map(project => ( // Displaying only the first 3 projects as a preview
+            
                 <div key={project._id} className="project-card">
                     <h3>{project.title}</h3>
-                    {project.imageUrl && (
+                    <Link to={`/projects/${project._id}`} className="project-title-link">
+                         {project.imageUrl && (
                         <img
                             src={`http://localhost:5000${project.imageUrl}`}
                             alt={project.title}
@@ -93,9 +96,9 @@ function ProjectList() {
                         />
                     )}
                     <p>{project.description.substring(0, 100)}...</p> {/* Short description */}
-                     <Link to={`/projects/${project._id}`} className="project-title-link">
-                        {project.title}
+                     <h3>Read more</h3>
                     </Link>
+                   
                 </div>
             ))}
         </div>

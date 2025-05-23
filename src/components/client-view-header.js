@@ -1,40 +1,29 @@
-// File: src/components/RootLayout.js
-
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../assests/styles/rootlayout.css';
 import Logo from '../assests/images/logo.png'
 
 function RootLayout() {
     // Opens the sidebar on small screens
     function displayNav() {
-        const header = document.querySelector('.header');
-        const nav = document.querySelector('.nav');
-        if (header) {
-            header.style.width = '70%';
-            header.style.height = '100%';
-        }
-        if (nav) {
-            nav.style.height = '0';
-        }
+        setIsOpen(true);
     }
 
-    // Closes the sidebar
-    function closesidebar() {
-        const header = document.querySelector('.header');
-        const nav = document.querySelector('.nav');
-        if (header) {
-            header.style.width = '0';
-        }
-        if (nav) {
-            nav.style.height = '100%';
-        }
-    }
+    const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
+    useEffect(() => {
+        let timer;
+        if (isOpen) {
+            timer = setTimeout(() => {
+                setIsOpen(false);
+            }, 5000); // Close after 5 seconds
+        }
+        return () => clearTimeout(timer); // Clean up the timer
+    }, [isOpen, location]); // Re-run effect when isOpen or location changes
     return (
-        <>
-            <nav className="nav">
-                <div className="nav-div">
+        <nav className="navbar">
                     <button className="menu-icon" onClick={displayNav}>
                         <svg
                             className="bi bi-list"
@@ -50,16 +39,12 @@ function RootLayout() {
                             />
                         </svg>
                     </button>
-                </div>
-                <div className="nav-div">
                     <img src={Logo} className="img-logo" alt="Logo" style={{width: '50px', height: '50px'}} />
                     <div className="brand">
                         Tiibu Co. Ltd
                     </div>
-                </div>
-            </nav>
-            <header className="header">
-                <button className="close" onClick={closesidebar}>
+            <header className={`header ${isOpen ? 'open' : ''}`}>
+                <button className="close" onClick={() => setIsOpen(false)}>
                     &times;
                 </button>
                 <ul>
@@ -79,8 +64,8 @@ function RootLayout() {
                         <NavLink to="/contact">Contact</NavLink>
                     </li>
                 </ul>
-            </header>
-        </>
+            </header> 
+        </nav>
     );
 }
 

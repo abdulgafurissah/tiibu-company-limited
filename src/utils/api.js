@@ -54,3 +54,57 @@ export const deleteProject = async (id) => {
     throw error;
   }
 };
+
+// --- Blog Posts API (NEW) ---
+export const fetchBlogPosts = async (page = 1, limit = 10, search = '', status = '') => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/blogposts?page=${page}&limit=${limit}&search=${search}&status=${status}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getBlogPostById = async (id) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/blogposts/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createBlogPost = async (blogPostData) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/blogposts`, blogPostData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateBlogPost = async (id, blogPostData) => {
+  try {
+    const response = await axios.put(`${API_BASE_URL}/blogposts/${id}`, blogPostData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteBlogPost = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/blogposts/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -1,11 +1,11 @@
 /* Existing styles for home.css might be here */
 .card-1{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  
-}
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 
+}
+ 
 /* Styles for the new home-dynamic-sections layout */
 .home-dynamic-sections {
     display: flex;
@@ -13,8 +13,8 @@
     box-sizing: border-box;
     align-items: flex-start; /* Align items to the top if they have different heights */
   }
-  
-  .projects-preview {
+
+ .projects-preview {
     width: 50%;
     margin-left: 5%; /* Left part of the "10% border" */
     padding: 25px;
@@ -24,8 +24,8 @@
     text-align: center;
     box-sizing: border-box; /* Include padding and border in the element's total width */
   }
-  
-  .homeBlogSection {
+
+ .homeBlogSection {
     width: 30%;
     margin-left: 10%; /* 10% space in-between projects-preview and homeBlogSection */
     margin-right: 5%; /* Right part of the "10% border" */
@@ -36,69 +36,94 @@
     text-align: center;
     box-sizing: border-box;
   }
-  
+
   /* General styling for headings within these sections */
   .projects-preview h2,
   .homeBlogSection h2 {
     color: #343a40; /* Darker heading color */
     margin-bottom: 25px;
     font-size: 1.8em;
-  }
-  
+ }
+
   /* Styling for the blog article */
   .homeBlogSection article {
     margin-top: 20px;
     padding: 15px;
     border-top: 1px solid #e9ecef; /* Lighter border */
   }
-  
+
   .homeBlogSection h3 {
     color: #495057; /* Slightly lighter than main heading */
     margin-bottom: 10px;
     font-size: 1.3em;
   }
-  
+ 
   .homeBlogSection i {
     color: #6c757d; /* Muted color for placeholder text */
     font-style: italic;
     font-size: 0.95em;
   }
-  
+
   /* Styling for ProjectList and ProjectCard to ensure they look good */
-  .project-list {
+ .project-list {
     display: flex;
     flex-direction: column; /* Stack project cards vertically in the preview */
     align-items: center; /* Center cards if they don't take full width */
     gap: 20px; /* Space between project cards */
   }
   
-  .project-card {
-    background-color: #ffffff; /* White background for cards */
+ .project-card {
+ background-color: #ffffff; /* White background for cards */
     border: 1px solid #dee2e6; /* Subtle border */
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners for cards */
     padding: 20px;
     width: 90%; /* Make cards take most of the section width */
     max-width: 400px; /* Max width for a card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for cards */
     text-align: left; /* Align text to left within cards for readability */
   }
-  
-  .project-card h3 {
+ 
+ .project-card h3 {
     color: #007bff; /* Accent color for project titles */
     margin-bottom: 10px;
     font-size: 1.2em;
   }
-  
+ 
   .project-card img {
     max-width: 100%; /* Ensure image is responsive within the card */
     height: auto;
     border-radius: 6px; /* Rounded corners for images */
     margin-bottom: 15px;
     border: 1px solid #e9ecef;
-  }
-  
+ }
+
   .project-card p {
     font-size: 0.9em;
     color: #495057;
     line-height: 1.6;
   }
+ 
+  /* Responsive adjustments */
+ @media (max-width: 768px) {
+    .home-dynamic-sections {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center; /* Center stacked sections */
+    }
+ 
+    .projects-preview,
+    .homeBlogSection {
+        width: 90%; /* Make sections take up more width */
+        margin: 20px auto; /* Add vertical margin and center horizontally */
+        padding: 20px; /* Adjust padding */
+    }
+ 
+    .projects-preview {
+        margin-top: 0; /* Remove extra top margin if it's the first section */
+    }
+ 
+    .project-card {
+        width: 100%; /* Make project cards take full width within their section */
+        max-width: none; /* Remove max-width constraint */
+    }
+ }
+ 
