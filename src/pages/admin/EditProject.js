@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getProjectById, updateProject } from '../../utils/api';
+import '../../assests/styles/editproject.css'
 
 function EditProject() {
   const { id } = useParams();
@@ -10,20 +11,32 @@ function EditProject() {
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('ongoing');
   const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
+    setError(null); // Clear previous errors
     getProjectById(id)
-      .then(data => {
-        setProject(data);
-        setTitle(data.title);
-        setDescription(data.description);
-        setStatus(data.status);
+      .then(response => {
+        // Handle APIs that might return data directly or nested under a 'data' key
+        const projectData = response.data || response;
+        if (projectData) {
+          setProject(projectData);
+          setTitle(projectData.title || '');
+          setDescription(projectData.description || '');
+          setStatus(projectData.status || 'ongoing');
+          if (projectData.imageUrl) {
+            setImagePreview(`http://localhost:5000${projectData.imageUrl}`);
+          }
+        } else {
+          setError('Project data not found in response.');
+        }
         setLoading(false);
       })
       .catch(err => {
-        setError(err.message || 'Failed to fetch project');
+        setError(err.response?.data?.error || err.message || 'Failed to fetch project');
         setLoading(false);
       });
   }, [id]);
@@ -40,9 +53,20 @@ function EditProject() {
 
     try {
       await updateProject(id, formData);
-      navigate('/');
+      navigate('/dashboard/projects'); // Navigate to project list after update
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to update project');
+    }
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+    if (file) {
+      setImagePreview(URL.createObjectURL(file));
+    } else {
+      // If no file is selected, revert to original project image if available
+      setImagePreview(project && project.imageUrl ? `http://localhost:5000${project.imageUrl}` : '');
     }
   };
 
@@ -50,14 +74,19 @@ function EditProject() {
     return <p>Loading project details...</p>;
   }
 
+  // If an error occurred during fetch and project is still null or not properly loaded
+  if (error && !project) {
+    return <p style={{ color: 'red' }}>Error: {error}</p>;
+  }
+
   if (!project) {
     return <p>Project not found.</p>;
   }
 
   return (
-    <div>
+    <div className='edit-project-container'>
       <h2>Edit Project</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title:</label>
@@ -94,18 +123,19 @@ function EditProject() {
           <input
             type="file"
             id="image"
-            onChange={(e) => setImage(e.target.files[0])}
+            accept="image/*"
+            onChange={handleImageChange}
           />
-          {project.imageUrl && (
+          {imagePreview && (
             <img
-              src={`http://localhost:5000${project.imageUrl}`}
-              alt={project.title}
+              src={imagePreview}
+              alt="Preview"
               style={{ maxWidth: '100px', marginTop: '10px' }}
             />
           )}
         </div>
         <button type="submit">Update Project</button>
-        <Link to="/">Cancel</Link>
+        <Link to="/dashboard/projects" className="cancel-button">Cancel</Link>
       </form>
     </div>
   );

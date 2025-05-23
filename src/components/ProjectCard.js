@@ -13,9 +13,9 @@ function ProjectCard({ project }) {
           alt={project.title}
         />
       )}
-      <p>{project.description}</p>
+      <p>{project.description.substring(0, 100)}...</p>
       
-      <Link to="/dashboard/addprojects" className="add-link">Add New Project</Link>
+      
       <Link to={`/dashboard/edit/${project._id}`} className="edit-link">Edit</Link>
       <Link to={`/dashboard/delete/${project._id}`} className="delete-link">delete</Link>
     </div>

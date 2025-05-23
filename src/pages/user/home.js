@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchProjects } from '../../utils/api';
 import '../../assests/styles/home.css';
@@ -93,6 +93,9 @@ function ProjectList() {
                         />
                     )}
                     <p>{project.description.substring(0, 100)}...</p> {/* Short description */}
+                     <Link to={`/projects/${project._id}`} className="project-title-link">
+                        {project.title}
+                    </Link>
                 </div>
             ))}
         </div>

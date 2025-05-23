@@ -1,0 +1,57 @@
+.edit-project-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.edit-project-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.edit-project-container form div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.edit-project-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.edit-project-container input[type="text"],
+.edit-project-container textarea,
+.edit-project-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.edit-project-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.edit-project-container button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.edit-project-container a {
+    color: #666;
+    text-decoration: none;
+}

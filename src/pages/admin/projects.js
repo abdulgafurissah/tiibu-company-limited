@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from '../../components/ProjectCard';
 import { fetchProjects } from '../../utils/api';
 import '../../assests/styles/problog.css'
@@ -31,6 +32,7 @@ function ProjectList() {
   return (
     <div className='card-1'>
       <div>
+        <Link to="/dashboard/addprojects" className="add-link">Add New Project</Link>
         {projects.map(project => (
           <ProjectCard key={project._id} project={project} />
         ))}

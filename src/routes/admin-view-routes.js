@@ -8,6 +8,7 @@ import Messages from '../pages/admin/messageView';
 import ProjectCard from '../pages/admin/projects';
 import EditProject from '../pages/admin/EditProject';
 import DashboardContent from '../pages/admin/dashboardContent' 
+import DeleteProject from '../pages/admin/DeleteProject';
 
 function AdminViewRoutes() {
   return (
@@ -29,6 +30,7 @@ function AdminViewRoutes() {
           <Route path="blog-posts" element={<BlogPosts />} />
           <Route path="job-applications" element={<JobApplications />} />
           <Route path="messages" element={<Messages />} />
+          <Route path="delete/:id" element={<DeleteProject />} />
         </Routes>
     </>
   );
