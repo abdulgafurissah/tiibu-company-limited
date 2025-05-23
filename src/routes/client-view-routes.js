@@ -7,6 +7,7 @@ import Contact from '../pages/user/contact';
 import Career from '../pages/user/career';
 import Header from '../components/client-view-header';
 import SingleProjectView from '../pages/user/SingleProjectView';
+import BlogListPage from '../pages/BlogListPage';
 
 function ClientViewRoutes() {
   return (
@@ -20,6 +21,7 @@ function ClientViewRoutes() {
         <Route path="contact" element={<Contact />} />
         <Route path="career" element={<Career />} />
         <Route path="/projects/:id" element={<SingleProjectView />} />
+        <Route path="/blog" element={<BlogListPage />} />
       </Routes>
     </>
   );

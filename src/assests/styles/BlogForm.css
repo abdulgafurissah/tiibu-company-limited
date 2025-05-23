@@ -1,0 +1,119 @@
+/* File: tiibu-frontend/src/styles/BlogForm.css */
+
+.blog-form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.blog-form-container h2 {
+  color: #34495e;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  width: calc(100% - 24px); /* Account for padding and border */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group input[type="file"] {
+  padding: 8px 0;
+}
+
+.image-preview-wrapper {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-preview {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.remove-image-checkbox {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* For mobile responsiveness */
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Mobile Responsiveness for forms */
+@media (max-width: 768px) {
+  .blog-form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .blog-form-container h2 {
+    font-size: 1.8em;
+  }
+  .form-group input, .form-group textarea, .form-group select {
+    width: calc(100% - 20px); /* Adjust padding */
+    padding: 10px;
+  }
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-actions .button {
+    width: 100%;
+  }
+}

@@ -1,9 +1,9 @@
 // File: tiibu-frontend/src/pages/BlogList.js
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import BlogPostCard from '../components/BlogPostCard';
-import { fetchBlogPosts } from '../utils/api';
-import '../styles/BlogList.css';
+import { fetchBlogPosts } from '../../utils/api';
+import BlogPostCard from '../../components/BlogPostCard.js';
+import '../../assests/styles/BlogList.css';
 
 function BlogList() {
   const [blogPosts, setBlogPosts] = useState([]);

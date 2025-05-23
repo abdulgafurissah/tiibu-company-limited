@@ -11,9 +11,9 @@ const Sidebar = () => {
           <li><Link to="/dashboard/services">Services</Link></li>
           <li><Link to="/dashboard/projects">ProjectCard</Link></li>
           <li><Link to="/dashboard/addprojects">Add Projects</Link></li>
-          <li><Link to="/dashboard/blog-posts">Blog Posts</Link></li>
           <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
           <li><Link to="/dashboard/messages">Messages</Link></li>
+          <li><Link to="/dashboard/blogposts">BlogList</Link></li>
         </ul>
       </nav>
     </div>
@@ -28,7 +28,7 @@ const Dashboard = () => {
       <div className="main-content">
       </div>
     </div>
-  );
+ );
 };
 
 export default Dashboard;

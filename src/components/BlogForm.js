@@ -1,5 +1,6 @@
 // File: tiibu-frontend/src/components/BlogForm.js
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/BlogForm.css';
 
 function BlogForm({ onSubmit, initialData = {}, isEditing = false, formTitle }) {

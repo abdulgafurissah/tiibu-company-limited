@@ -1,0 +1,146 @@
+/* File: tiibu-frontend/src/styles/BlogList.css */
+
+.blog-list-container {
+  padding: 20px 0;
+}
+
+.blog-list-heading {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.blog-list-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+  gap: 15px; /* Space between elements when wrapped */
+}
+
+.add-blog-post-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-blog-post-button:hover {
+  background-color: #218838;
+}
+
+.blog-filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+}
+
+.search-input, .status-filter {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus, .status-filter:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid columns */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.no-blog-posts-message {
+  text-align: center;
+  grid-column: 1 / -1; /* Make it span all columns */
+  color: #777;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+
+.pagination-button {
+  background-color: #ecf0f1;
+  color: #34495e;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-button:hover {
+  background-color: #dde1e5;
+  transform: translateY(-2px);
+}
+
+.pagination-button.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+  font-weight: bold;
+}
+
+.pagination-button.active:hover {
+  background-color: #2980b9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .blog-list-heading {
+    font-size: 2em;
+  }
+  .blog-list-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .blog-filters {
+    width: 100%;
+    justify-content: center;
+  }
+  .search-input, .status-filter {
+    flex-grow: 1; /* Allow inputs to take full width */
+  }
+  .blog-posts-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 20px;
+  }
+  .pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pagination-button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-list-heading {
+    font-size: 1.8em;
+  }
+  .add-blog-post-button {
+    width: 100%;
+    text-align: center;
+  }
+  .search-input, .status-filter {
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,127 @@
+/* File: tiibu-frontend/src/styles/SingleBlogPost.css */
+
+.single-blog-post-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 850px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.single-blog-post-title {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.single-blog-post-meta {
+  font-size: 0.95em;
+  color: #777;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.single-blog-post-meta .author {
+  font-weight: bold;
+  color: #555;
+}
+
+.single-blog-post-image-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.single-blog-post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.single-blog-post-content {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 30px;
+  white-space: pre-wrap; /* Preserves whitespace and newlines */
+}
+
+.single-blog-post-tags {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.single-blog-post-tags strong {
+  color: #333;
+}
+
+.single-blog-post-tags .tag {
+  background-color: #e0f2f7;
+  color: #00796b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.single-blog-post-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+}
+
+/* Reusing button styles from App.css */
+.button.back-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.button.back-button:hover {
+  background-color: #2980b9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .single-blog-post-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .single-blog-post-title {
+    font-size: 2em;
+  }
+  .single-blog-post-content {
+    font-size: 1em;
+  }
+  .single-blog-post-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .single-blog-post-actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-blog-post-title {
+    font-size: 1.8em;
+  }
+  .single-blog-post-meta {
+    font-size: 0.85em;
+  }
+  .single-blog-post-tags .tag {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+}

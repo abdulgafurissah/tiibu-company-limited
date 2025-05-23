@@ -1,7 +1,7 @@
 // File: tiibu-frontend/src/components/BlogPostCard.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/BlogPostCard.css';
+import '../assests/styles/BlogPostCard.css';
 
 function BlogPostCard({ post }) {
   // Truncate content for display in the card

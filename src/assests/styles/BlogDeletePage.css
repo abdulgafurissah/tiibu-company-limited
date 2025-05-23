@@ -1,0 +1,83 @@
+/* File: tiibu-frontend/src/styles/DeletePage.css */
+
+.delete-page-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 550px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.delete-page-container h2 {
+  color: #e74c3c;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.delete-page-container h3 {
+  color: #34495e;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+}
+
+.delete-page-container p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.item-image-preview {
+  margin: 25px 0;
+}
+
+.item-image-preview img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.delete-actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* For mobile responsiveness */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .delete-page-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .delete-page-container h2 {
+    font-size: 1.8em;
+  }
+  .delete-page-container h3 {
+    font-size: 1.4em;
+  }
+  .delete-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .delete-actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-page-container h2 {
+    font-size: 1.6em;
+  }
+  .delete-page-container h3 {
+    font-size: 1.2em;
+  }
+  .delete-page-container p {
+    font-size: 1em;
+  }
+}
