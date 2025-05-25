@@ -9,6 +9,7 @@ import EditProject from '../pages/admin/EditProject';
 import DashboardContent from '../pages/admin/dashboardContent' 
 import DeleteProject from '../pages/admin/DeleteProject';
 import BlogList from '../pages/admin/BlogList';
+import AddBlogPost from '../pages/admin/AddBlogPost';
 
 function AdminViewRoutes() {
   return (
@@ -30,7 +31,8 @@ function AdminViewRoutes() {
           <Route path="job-applications" element={<JobApplications />} />
           <Route path="messages" element={<Messages />} />
           <Route path="delete/:id" element={<DeleteProject />} />
-          <Route path="blogposts" element={<BlogList />} />         
+          <Route path="blogposts" element={<BlogList />} /> 
+          <Route path='addplogpost' element={<AddBlogPost/>}/>     
         </Routes>
     </>
   );

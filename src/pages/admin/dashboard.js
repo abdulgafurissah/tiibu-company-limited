@@ -14,6 +14,7 @@ const Sidebar = () => {
           <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
           <li><Link to="/dashboard/messages">Messages</Link></li>
           <li><Link to="/dashboard/blogposts">BlogList</Link></li>
+          <li><Link to="/dashboard/addplogpost">Add blog post</Link> </li>
         </ul>
       </nav>
     </div>

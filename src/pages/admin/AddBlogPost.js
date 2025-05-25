@@ -1,9 +1,9 @@
 // File: tiibu-frontend/src/pages/AddBlogPost.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BlogForm from '../components/BlogForm';
-import { createBlogPost } from '../utils/api';
-import '../styles/FormPage.css'; // Reusing general form page styles
+import BlogForm from '../../components/BlogForm';
+import { createBlogPost } from '../../utils/api';
+import '../../assests/styles/BlogForm.css'; // Reusing general form page styles
 
 function AddBlogPost() {
   const [error, setError] = useState(null);

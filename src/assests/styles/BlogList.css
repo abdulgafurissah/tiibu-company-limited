@@ -2,6 +2,12 @@
 
 .blog-list-container {
   padding: 20px 0;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .blog-list-heading {

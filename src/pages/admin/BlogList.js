@@ -59,7 +59,7 @@ function BlogList() {
     <div className="blog-list-container">
       <h2 className="blog-list-heading">Blog Posts</h2>
       <div className="blog-list-header-actions">
-        <Link to="/blog/add" className="button add-blog-post-button">Create New Post</Link>
+        <Link to="/dashboard/addplogpost" className="button add-blog-post-button">Create New Post</Link>
         <div className="blog-filters">
           <input
             type="text"
