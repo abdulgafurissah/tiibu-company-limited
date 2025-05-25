@@ -7,7 +7,7 @@ import Contact from '../pages/user/contact';
 import Career from '../pages/user/career';
 import Header from '../components/client-view-header';
 import SingleProjectView from '../pages/user/SingleProjectView';
-import BlogListPage from '../pages/BlogListPage';
+import BlogListPage from '../pages/user/BlogListPage';
 
 function ClientViewRoutes() {
   return (

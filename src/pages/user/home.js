@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { fetchProjects } from '../../utils/api';
+import { fetchProjects, fetchBlogPosts as getAllBlogPosts  } from '../../utils/api';
 import '../../assests/styles/home.css';
 import '../../assests/styles/problog.css'
 
@@ -21,6 +21,7 @@ window.onload = () => {
     setInterval(changeSlide, 3000); // Change slide every 3 seconds
 };
 
+
 function Home({project}) {
     return (
         <>
@@ -38,7 +39,7 @@ function Home({project}) {
             </section>
 
             <section className="quick-nav">
-                <NavLink to="/career">Careers</NavLink>
+                <NavLink to="/blog">Publication</NavLink>
                 <NavLink to="/projects"> Projects Portfolio</NavLink>
                 <NavLink to="/contact"> Get in Touch</NavLink>
             </section>
@@ -50,14 +51,61 @@ function Home({project}) {
                 </section>
                 <section className='homeBlogSection'>
                     <h2>Latest Blog Posts</h2>
-                    <article>
-                        <h3>5 Tips for Sustainable Construction</h3>
-                        <i>lorem sepium</i>
-                    </article>
+                    <BlogListPage />
                 </section>
             </div>
         </>
     );
+}
+function BlogListPage() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const response = await getAllBlogPosts();
+        setPosts(response.data);
+        setError(null);
+      } catch (err) {
+        const errorMessage = err.response?.data?.error || err.message || 'Failed to fetch blog posts';
+        setError(errorMessage);
+        console.error("Error fetching blog posts:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+  if (loading) return <div className="container"><p>Loading blog posts...</p></div>;
+  if (error) return <div className="container"><p className="error-message">Error: {error}</p></div>;
+
+  return (
+    <div className="container public-blog-list-container">
+      <h1 className="page-title">Our Blog</h1>
+      {posts.length === 0 ? (
+        <p>No blog posts available at the moment. Check back soon!</p>
+      ) : (
+        <div className="public-blog-posts-grid">
+          {posts.map(post => (
+            <div key={post._id} className="public-blog-post-card">
+              {post.imageUrl && (
+                <img src={`http://localhost:5000${post.imageUrl}`} alt={post.title} className="public-blog-post-card-image" />
+              )}
+              <h3 className="public-blog-post-card-title">{post.title}</h3>
+              <p className="public-blog-post-card-meta">By {post.author} on {new Date(post.createdAt).toLocaleDateString()}</p>
+              <p className="public-blog-post-card-excerpt">{`${post.content.substring(0, 100)}...`}</p>
+              <Link to={`/blog/${post._id}`} className="button read-more-button">Read More</Link>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function ProjectList() {

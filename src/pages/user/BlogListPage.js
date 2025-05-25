@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchBlogPosts as getAllBlogPosts } from '../utils/api'; // We'll add this function next
-import '../assests/styles/PublicBlogList.css'; // We'll create this CSS file
+import { fetchBlogPosts as getAllBlogPosts } from '../../utils/api'; // We'll add this function next
+import '../../assests/styles/PublicBlogList.css'; // We'll create this CSS file
 
 function BlogListPage() {
   const [posts, setPosts] = useState([]);
