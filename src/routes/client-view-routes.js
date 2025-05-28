@@ -8,6 +8,7 @@ import Career from '../pages/user/career';
 import Header from '../components/client-view-header';
 import SingleProjectView from '../pages/user/SingleProjectView';
 import BlogListPage from '../pages/user/BlogListPage';
+import SingleBlogPost from '../pages/user/SingleBlogPost'
 
 function ClientViewRoutes() {
   return (
@@ -22,6 +23,7 @@ function ClientViewRoutes() {
         <Route path="career" element={<Career />} />
         <Route path="/projects/:id" element={<SingleProjectView />} />
         <Route path="/blog" element={<BlogListPage />} />
+        <Route path='/blog/:id' element={<SingleBlogPost/>} />
       </Routes>
     </>
   );

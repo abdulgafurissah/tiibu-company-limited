@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import '../assests/styles/rootlayout.css';
 import Logo from '../assests/images/logo.png'
 
@@ -39,10 +39,12 @@ function RootLayout() {
                             />
                         </svg>
                     </button>
+                    <Link to='/'>
                     <img src={Logo} className="img-logo" alt="Logo" style={{width: '50px', height: '50px'}} />
                     <div className="brand">
                         Tiibu Co. Ltd
                     </div>
+                    </Link>
             <header className={`header ${isOpen ? 'open' : ''}`}>
                 <button className="close" onClick={() => setIsOpen(false)}>
                     &times;

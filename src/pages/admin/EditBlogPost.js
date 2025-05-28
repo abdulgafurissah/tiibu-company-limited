@@ -1,9 +1,9 @@
 // File: tiibu-frontend/src/pages/EditBlogPost.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import BlogForm from '../components/BlogForm';
-import { getBlogPostById, updateBlogPost } from '../utils/api';
-import '../styles/FormPage.css'; // Reusing general form page styles
+import BlogForm from '../../components/BlogForm';
+import { getBlogPostById, updateBlogPost } from '../../utils/api';
+import '../../assests/styles/FormPage.css'; // Reusing general form page styles
 
 function EditBlogPost() {
   const { id } = useParams();
@@ -29,7 +29,7 @@ function EditBlogPost() {
   const handleSubmit = async (formData) => {
     try {
       await updateBlogPost(id, formData);
-      navigate('/blog'); // Redirect to blog list
+      navigate('/dashboard/blogposts'); // Redirect to blog list
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to update blog post');
     }

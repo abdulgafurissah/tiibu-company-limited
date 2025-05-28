@@ -10,6 +10,11 @@ import DashboardContent from '../pages/admin/dashboardContent'
 import DeleteProject from '../pages/admin/DeleteProject';
 import BlogList from '../pages/admin/BlogList';
 import AddBlogPost from '../pages/admin/AddBlogPost';
+import EditBlogPost from '../pages/admin/EditBlogPost'
+import DeleteBlogPost from '../pages/admin/DeleteBlogPost'
+import { useAuth } from '../context/AuthContext';
+import LoginPage from '../pages/admin/LoginPage';
+
 
 function AdminViewRoutes() {
   return (
@@ -32,7 +37,12 @@ function AdminViewRoutes() {
           <Route path="messages" element={<Messages />} />
           <Route path="delete/:id" element={<DeleteProject />} />
           <Route path="blogposts" element={<BlogList />} /> 
-          <Route path='addplogpost' element={<AddBlogPost/>}/>     
+          <Route path='addplogpost' element={<AddBlogPost/>}/>   
+          <Route path='editblogpost/:id' element={<EditBlogPost/>}/>
+          <Route path='deleteblogpost/:id' element={<DeleteBlogPost/>}/>
+          <Route path='login' element={<LoginPage/>}/>
+          
+          
         </Routes>
     </>
   );

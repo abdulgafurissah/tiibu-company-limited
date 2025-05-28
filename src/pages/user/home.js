@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchProjects, fetchBlogPosts as getAllBlogPosts  } from '../../utils/api';
 import '../../assests/styles/home.css';
 import '../../assests/styles/problog.css'
+import One from '../../assests/images/1.png'
 
 // Ensure DOM elements are loaded before attaching event listeners
 window.onload = () => {
@@ -27,9 +28,9 @@ function Home({project}) {
         <>
             <section className="hero">
                 <div className="slider">
-                    <img src="../../assests/images/logo.png" alt="Project 1" className="active" />
-                    <img src="project2.jpg" alt="Project 2" />
-                    <img src="project3.jpg" alt="Project 3" />
+                    <img src={One} alt="Project 1" className="active" />
+                    <img src= {One} alt="Project 2" />
+                    <img src={One} alt="Project 3" />
                 </div>
                 <div className="overlay"></div>
                 <div>
@@ -86,7 +87,6 @@ function BlogListPage() {
 
   return (
     <div className="container public-blog-list-container">
-      <h1 className="page-title">Our Blog</h1>
       {posts.length === 0 ? (
         <p>No blog posts available at the moment. Check back soon!</p>
       ) : (

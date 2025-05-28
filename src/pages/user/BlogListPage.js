@@ -32,7 +32,7 @@ function BlogListPage() {
 
   return (
     <div className="container public-blog-list-container">
-      <h1 className="page-title">Our Blog</h1>
+      <h1 className="page-title">Blog</h1>
       {posts.length === 0 ? (
         <p>No blog posts available at the moment. Check back soon!</p>
       ) : (

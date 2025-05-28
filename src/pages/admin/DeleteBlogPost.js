@@ -1,8 +1,8 @@
 // File: tiibu-frontend/src/pages/DeleteBlogPost.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { getBlogPostById, deleteBlogPost } from '../utils/api';
-import '../styles/DeletePage.css'; // Reusing general delete page styles
+import { getBlogPostById, deleteBlogPost } from '../../utils/api';
+import '../../assests/styles/BlogDeletePage.css'; // Reusing general delete page styles
 
 function DeleteBlogPost() {
   const { id } = useParams();
@@ -28,7 +28,7 @@ function DeleteBlogPost() {
   const handleDelete = async () => {
     try {
       await deleteBlogPost(id);
-      navigate('/blog'); // Redirect to blog list after successful deletion
+      navigate('/dashboard/blogposts'); // Redirect to blog list after successful deletion
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to delete blog post');
     }

@@ -30,8 +30,8 @@ function BlogPostCard({ post }) {
       </div>
       <div className="blog-post-card-actions">
         <Link to={`/blog/${post._id}`} className="button view-button">Read More</Link>
-        <Link to={`/blog/edit/${post._id}`} className="button edit-button">Edit</Link>
-        <Link to={`/blog/delete/${post._id}`} className="button delete-button">Delete</Link>
+        <Link to={`/dashboard/editblogpost/${post._id}`} className="button edit-button">Edit</Link>
+        <Link to={`/dashboard/deleteblogpost/${post._id}`} className="button delete-button">Delete</Link>
       </div>
     </div>
   );
