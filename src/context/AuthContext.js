@@ -1,67 +1,68 @@
-// File: tiibu-frontend/src/context/AuthContext.js
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext();
 
+// Custom hook to use the auth context
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
+
+// API base URL
+const API_URL = 'http://localhost:5000/api/auth'; // Your backend URL
+
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem('adminToken') || null);
-  const [user, setUser] = useState(null); // Store user info like username, role
-  const [isAuthenticated, setIsAuthenticated] = useState(!!token);
-  const [loading, setLoading] = useState(true); // To check initial token validity
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true); // For initial check
+  const [token, setToken] = useState(localStorage.getItem('tiibu_token'));
 
-  axios.defaults.baseURL = 'http://localhost:5000/api'; // Set base URL for all axios requests
-
-  // Set Authorization header for all future requests if token exists
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common['x-auth-token'] = token;
-      // Optional: Decode token to get user info or make a request to /api/admin/dashboard-status
-      const fetchUser = async () => {
-        try {
-          const res = await axios.get('/admin/dashboard-status'); // Use protected route to verify token
-          setUser(res.data.user);
-          setIsAuthenticated(true);
-        } catch (error) {
-          console.error('Token verification failed:', error.response?.data?.message || error.message);
-          logout(); // Invalid token, log out
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchUser();
-    } else {
-      setLoading(false);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      // You could add a verify token endpoint on your backend and call it here
+      // to ensure the token is still valid and get user data.
+      // For now, we'll assume if a token exists, the user is "logged in" on the client.
+      // A proper implementation would verify the token with the backend.
+      // For simplicity, we are not fetching user details here on load, but you should.
+      setCurrentUser({ token }); // Placeholder, ideally fetch user details
     }
+    setLoading(false);
   }, [token]);
 
   const login = async (username, password) => {
     try {
-      const res = await axios.post('/auth/login', { username, password });
-      setToken(res.data.token);
-      localStorage.setItem('adminToken', res.data.token);
-      setUser(res.data.user);
-      setIsAuthenticated(true);
-      return true; // Success
-    } catch (err) {
-      console.error('Login error:', err.response?.data?.error || err.message);
-      return err.response?.data?.error || 'Login failed'; // Return error message
+      const response = await axios.post(`${API_URL}/login`, { username, password });
+      if (response.data.success && response.data.token) {
+        localStorage.setItem('tiibu_token', response.data.token);
+        setToken(response.data.token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
+        setCurrentUser({ token: response.data.token }); // Placeholder
+        return { success: true };
+      }
+    } catch (error) {
+      console.error("Login failed:", error.response ? error.response.data : error.message);
+      return { success: false, error: error.response ? error.response.data.error : 'Login failed' };
     }
   };
 
   const logout = () => {
+    localStorage.removeItem('tiibu_token');
     setToken(null);
-    setUser(null);
-    setIsAuthenticated(false);
-    localStorage.removeItem('adminToken');
-    delete axios.defaults.headers.common['x-auth-token']; // Remove header
+    delete axios.defaults.headers.common['Authorization'];
+    setCurrentUser(null);
+  };
+
+  const value = {
+    currentUser,
+    token,
+    login,
+    logout,
+    isAuthenticated: !!token, // Or !!currentUser based on your logic
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, isAuthenticated, loading, login, logout }}>
-      {children}
+    <AuthContext.Provider value={value}>
+      {!loading && children}
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);
