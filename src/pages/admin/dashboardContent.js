@@ -1,5 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext'; // Adjust path
 import '../../assests/styles/dashboardContent.css'
 const DashboardContent = () => {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login'); // Redirect to login after logout
+  };
   return (
     <div className="dashboard-home">
       <h1>Tiibu Company Limited</h1>
@@ -17,6 +26,9 @@ const DashboardContent = () => {
           <p>8</p>
         </div>
       </div>
+      <button onClick={handleLogout} style={{ margin: '20px auto', display: 'block', padding: '10px' }}>
+        Logout
+      </button>
     </div>
   );
 };

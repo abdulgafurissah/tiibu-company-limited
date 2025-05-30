@@ -32,14 +32,14 @@ const Sidebar = () => {
       <nav>
         <ul>
           {/* Links are now relative to /dashboard/* */}
-          <li><Link to="">Dashboard Home</Link></li> {/* Points to /dashboard */}
-          <li><Link to="services">Services</Link></li>
-          <li><Link to="projects">Project List</Link></li>
-          <li><Link to="addprojects">Add Projects</Link></li>
-          <li><Link to="job-applications">Job Applications</Link></li>
-          <li><Link to="messages">Messages</Link></li>
-          <li><Link to="blogposts">Blog List</Link></li>
-          <li><Link to="addblogpost">Add Blog Post</Link></li>
+         <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/dashboard/services">Services</Link></li>
+          <li><Link to="/dashboard/projects">ProjectCard</Link></li>
+          <li><Link to="/dashboard/addprojects">Add Projects</Link></li>
+          <li><Link to="/dashboard/job-applications">Job Applications</Link></li>
+          <li><Link to="/dashboard/messages">Messages</Link></li>
+          <li><Link to="/dashboard/blogposts">BlogList</Link></li>
+          <li><Link to="/dashboard/addblogpost">Add blog post</Link> </li>
         </ul>
       </nav>
       <button onClick={handleLogout} style={{ margin: '20px auto', display: 'block', padding: '10px' }}>
@@ -53,12 +53,14 @@ const Sidebar = () => {
 const AdminLayout = () => {
   return (
     <div className="flex"> {/* Your existing flex div */}
+          <DashboardContentPage />
       <Sidebar />
+
       <div className="flex-grow p-4"> {/* Your existing content area */}
         {/* Nested routes will render their element here via <Outlet /> implicitly */}
         <Routes>
           {/* Default page for /dashboard */}
-          <Route index element={<Dashboard />} />
+          <Route path="*"  element={<Dashboard />} />
           <Route path="content" element={<DashboardContentPage />} />
           <Route path="services" element={<Services />} />
           <Route path="projects" element={<ProjectCard />} />
@@ -81,6 +83,7 @@ const AdminLayout = () => {
 
 // The main exported function for admin routes
 function AdminViewRoutes() { // Renamed from AdminViewRoutes to match App.js usage
+  
   return <AdminLayout />;
 }
     
